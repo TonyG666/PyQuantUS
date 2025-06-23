@@ -16,7 +16,6 @@ This modular approach allows the software to support multiple probe types (linea
 
 - In `utc_loaders`, create a new folder named after your probe or data format (e.g., `ge_rf`).
 
----
 
 ### 2. Mimic the Structure of an Existing Parser
 
@@ -35,7 +34,6 @@ Typical contents of a parser folder:
 ├── parser.py        # main parser module
 ```
 
----
 
 ### 3. Modify Contents in the Parser Folder
 
@@ -52,7 +50,6 @@ Typical contents of a parser folder:
 - **Phantom Data**:
   - Even if phantom data isn't available, always write code for parsing phantom data.
 
----
 
 ### 4. Test the Parser
 
@@ -63,7 +60,6 @@ Typical contents of a parser folder:
   - `phantom_path` with the phantom data path (or reuse `scan_path` if phantom data is missing)
 - Run the analysis pipeline using your parser to ensure everything works correctly.
 
----
 
 ### 5. Document the Parser
 
