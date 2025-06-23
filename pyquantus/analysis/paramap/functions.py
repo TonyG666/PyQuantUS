@@ -471,3 +471,23 @@ def hkd_params(scan_rf_window: np.ndarray, phantom_rf_window: np.ndarray,
     window.results.s = s
     window.results.omega = omega
     window.results.alpha = alpha
+
+
+
+# experimenting with adding functions
+@output_vars("mean_rf_amplitude")
+def compute_mean_rf(scan_rf_window: np.ndarray, phantom_rf_window: np.ndarray, 
+                    window: Window, config: RfAnalysisConfig, 
+                    image_data: UltrasoundRfImage, **kwargs) -> None:
+    """
+    Compute the mean amplitude of the RF window.
+
+    Args:
+        scan_rf_window (np.ndarray): RF data of the window in the scan image.
+        window (Window): Window object to store results.
+        seg_data: Unused placeholder for compatibility.
+        analysis_meta: Unused placeholder for compatibility.
+        analysis_config: Unused placeholder for compatibility.
+    """
+    mean_val = np.mean(np.abs(scan_rf_window))
+    window.results.mean_rf_amplitude = mean_val
